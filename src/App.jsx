@@ -2,44 +2,51 @@ import { useEffect, useState } from "react";
 
 function App() {
   return (
-    <div>
-      <b>
-        Hii there
-      </b>
-      <Counter />
+    <div style={{backgroundColor:"#dfe6e9", height:"100vh"}}>
+     <div style={{display:"flex", justifyContent:"center"}}>
+      <div>
+        <div>
+         <PostComponent/>
+         <br />
+        </div>
+        <div>
+         <PostComponent/>
+         <br />
+        </div>
+        
+         <PostComponent/>
+         
+      
+      </div>
+     </div>
+
     </div>
   );
 }
 
-function Counter() {
-  const [count, setCount] = useState(0);
+const style = {
+  width:200, backgroundColor:"white", borderRadius:10, borderColor:"gray", borderWidth:1, padding:20,
+}
 
-  useEffect(function(){
-    setInterval(function(){
-      // setCount(count => count+1)
-      //or
-      setCount(function(count){
-        return count +1;
-      })
-
-    },1000)
-    console.log("mounted");
-    
-  },[])
-
-  function increaseCount() {
-    setCount(count + 1);
-  }
-
- 
-
-  return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={increaseCount}>Increase Count</button>
-      
+function PostComponent(){
+  return(
+    <div style={{style}}>
+      <div style={{display:"flex"}}>
+        <img src="https://cdn.pixabay.com/photo/2022/06/27/14/38/cat-7287671_1280.jpg" style={{width:30, height:30, borderRadius:20}} />
+        <div style={{fontSize:10, marginLeft:10}}>
+          <b>100xdevs</b>
+          <div>23,098 followers</div>
+          <div>12m</div>
+        </div>
+      </div>
+      <div style={{fontSize:12}}>
+        What to know how to win big? 
+        Check how folks win $6000 in bounties.
+      </div>
     </div>
-  );
+  )
+  
 }
 
 export default App;
+
